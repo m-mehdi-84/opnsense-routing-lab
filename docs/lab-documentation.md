@@ -77,8 +77,7 @@ A static route was manually configured in OPNsense.
 
 ### Observation
 
-Since both networks are directly connected to OPNsense, static routes are not required for functionality.  
-This step was performed for **learning and validation purposes**.
+Static routes are not required in directly connected networks, but were configured to demonstrate routing behavior.
 
 ---
 
@@ -100,6 +99,7 @@ Two routes were configured with different metric values:
 
 - traffic automatically used secondary route  
 - confirmed that lower metric is preferred  
+- demonstrated how routers prioritize paths based on cost  
 
 ---
 
@@ -151,11 +151,31 @@ ping <target-host>
 
 ## Routing Table Verification
 
-Routing behavior was validated by analyzing:
+Routing behavior was validated by inspecting routing tables.
 
-- active routes  
-- gateway selection  
-- path changes during testing  
+### On OPNsense (Shell)
+
+```
+netstat -rn
+```
+
+### On Linux (Ubuntu)
+
+```
+ip route
+```
+
+### On Windows
+
+```
+route print
+```
+
+### Purpose
+
+- verify active routes  
+- confirm gateway selection  
+- analyze path changes during testing  
 
 ---
 
@@ -256,7 +276,7 @@ TTL exceeded
 - firewall rules directly impact routing behavior  
 - routing misconfiguration can cause loops  
 - system reboot may be required to clear routing state  
-- proper testing is essential to validate routing logic  
+- routing tables are essential for validation and troubleshooting  
 
 ---
 
