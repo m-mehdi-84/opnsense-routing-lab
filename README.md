@@ -58,28 +58,28 @@ Key focus areas:
 
 ## Routing Scenarios
 
-### Static Routing
+### Static Routing Analysis
 
-- configured static routes between LAN and LAN2  
-- tested communication across segmented networks  
-- analyzed routing behavior in directly connected networks  
-
----
-
-### Routing Metrics
-
-- configured multiple routes with different metrics  
-- observed route preference based on metric values  
-- tested failover by removing primary route  
+- reviewed static route configuration in OPNsense
+- analyzed why additional static routes are unnecessary for directly connected networks
+- identified how incorrect route configuration can create routing conflicts and loops
 
 ---
 
-### Dynamic Routing (OSPF)
+### Routing Metrics Analysis
 
-- installed FRR plugin in OPNsense  
-- enabled OSPF  
-- configured LAN and LAN2 interfaces  
-- defined OSPF networks  
+- configured route metric values to study path preference
+- analyzed how lower metric values influence route selection
+- observed how incorrect or conflicting route configuration can affect connectivity
+
+---
+
+### OSPF Configuration Study
+
+- installed the FRR plugin in OPNsense
+- enabled and configured OSPF for LAN and LAN2
+- confirmed that no route exchange occurred because the lab contained only one router
+- documented that multiple routers are required to validate real OSPF neighbor relationships and dynamic route exchange
 
 ---
 
