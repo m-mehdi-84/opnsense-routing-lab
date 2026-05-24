@@ -73,7 +73,9 @@ A static route was manually configured in OPNsense.
 
 ### Result
 
-- communication between LAN and LAN2 successful  
+- communication between LAN and LAN2 was validated through OPNsense
+- the test confirmed that both networks were already directly connected through the same router
+- the manually added static route was therefore unnecessary for connectivity
 
 ### Observation
 
@@ -97,9 +99,9 @@ Two routes were configured with different metric values:
 
 ### Result
 
-- traffic automatically used secondary route  
-- confirmed that lower metric is preferred  
-- demonstrated how routers prioritize paths based on cost  
+- route metric values were reviewed to understand path preference
+- lower metric values represent preferred routes when multiple valid paths exist
+- because this lab used a single OPNsense router with directly connected networks, it did not represent a full production failover scenario
 
 ---
 
